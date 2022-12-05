@@ -72,7 +72,7 @@ const LoginPage = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem('Token')) {
       router.push('/')
     }
   })
@@ -118,7 +118,7 @@ const LoginPage = () => {
         .post('http://restapi.adequateshop.com/api/authaccount/login', Loginvalue)
 
         .then(res => {
-          console.log('res', res)
+    
 
           if (res.data.message === 'success') {
             localStorage.clear()

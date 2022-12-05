@@ -27,7 +27,7 @@ import { useRouter } from 'next/router'
 const Dashboard = () => {
   const router = useRouter()
   useEffect(() => {
-    if (!localStorage.getItem('token')) {
+    if (!localStorage.getItem('Token')) {
       router.push('/pages/login/')
     }
   })
