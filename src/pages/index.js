@@ -30,7 +30,8 @@ const Dashboard = () => {
     if (!localStorage.getItem('token')) {
       router.push('/pages/login/')
     }
-  }, [])
+  })
+
   return (
     <ApexChartWrapper>
       <Grid container spacing={6}>

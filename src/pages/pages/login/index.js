@@ -40,7 +40,6 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 import FooterIllustrationsV1 from 'src/views/pages/auth/FooterIllustration'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-// import withAuth from 'src/HOC/withAuth'
 
 // ** Styled Components
 const Card = styled(MuiCard)(({ theme }) => ({
@@ -76,10 +75,9 @@ const LoginPage = () => {
     if (localStorage.getItem('token')) {
       router.push('/')
     }
-  }, [])
+  })
 
   // ** Hook
-
 
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword })
@@ -96,6 +94,7 @@ const LoginPage = () => {
       setErrors({ ...errors, [name]: '' })
     }
   }
+
   const validateForm = () => {
     let formIsValid = true
     let errors = {}
@@ -109,6 +108,7 @@ const LoginPage = () => {
       errors['password'] = '*Please enter Password'
     }
     setErrors(errors)
+
     return formIsValid
   }
 
